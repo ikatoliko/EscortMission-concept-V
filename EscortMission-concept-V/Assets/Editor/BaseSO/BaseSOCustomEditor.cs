@@ -11,6 +11,9 @@ public class BaseSOCustomEditor : Editor {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_customName"));
         
         serializedObject.ApplyModifiedProperties();
+
+        EditorGUILayout.Space();
+
         base.OnInspectorGUI();
     }
 
