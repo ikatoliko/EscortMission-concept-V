@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3567f5f71cedc428991fbd87a77908, type: 3}
-  m_Name: Iron
+  m_Script: {fileID: 11500000, guid: 15895a0f08f55594b8868d75fdd90166, type: 3}
+  m_Name: Of Slicing
   m_EditorClassIdentifier: 
   _useCustomName: 0
   _customName: 
   Stats:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: 6f39142f0917ad7499c5310ece4c6aab, type: 2}
-    <Value>k__BackingField: 1
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0808fad00d63548498ef83b7ac4573e8, type: 2}
     <Value>k__BackingField: 2
-  Stats2:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: c774aca1a47967847b2b453b77f85602, type: 2}
-    <Value>k__BackingField: 1
+  Stats2: []

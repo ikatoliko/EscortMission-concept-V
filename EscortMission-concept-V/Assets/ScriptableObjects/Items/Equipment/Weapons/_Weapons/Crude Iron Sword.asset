@@ -14,5 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _useCustomName: 0
   _customName: 
-  <Material>k__BackingField: {fileID: 0}
-  <Type>k__BackingField: {fileID: 0}
+  <EquipmentMaterial>k__BackingField: {fileID: 11400000, guid: fe6f21cf58db68e468661fc3ef2c08a2, type: 2}
+  <Quality>k__BackingField: {fileID: 11400000, guid: dd4e5db08d4da3f46993126df24ed93f, type: 2}
+  <Enchantment>k__BackingField: {fileID: 11400000, guid: c7f38201cea4b7b41a9c8f88038eca4f, type: 2}
+  displayStats:
+  - stat: {fileID: 11400000, guid: 6f39142f0917ad7499c5310ece4c6aab, type: 2}
+    sum: 3
+    vs:
+    - value: 2
+      source: {fileID: 11400000, guid: 2b40b8060581144419851932002ee681, type: 2}
+    - value: 1
+      source: {fileID: 11400000, guid: fe6f21cf58db68e468661fc3ef2c08a2, type: 2}
+  - stat: {fileID: 11400000, guid: 0808fad00d63548498ef83b7ac4573e8, type: 2}
+    sum: 7
+    vs:
+    - value: 3
+      source: {fileID: 11400000, guid: 2b40b8060581144419851932002ee681, type: 2}
+    - value: 2
+      source: {fileID: 11400000, guid: fe6f21cf58db68e468661fc3ef2c08a2, type: 2}
+    - value: 2
+      source: {fileID: 11400000, guid: c7f38201cea4b7b41a9c8f88038eca4f, type: 2}
+  <WeaponType>k__BackingField: {fileID: 11400000, guid: 2b40b8060581144419851932002ee681, type: 2}
