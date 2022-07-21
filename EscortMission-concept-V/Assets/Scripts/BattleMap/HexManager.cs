@@ -36,7 +36,7 @@ public class DirectHexDisplacer : IHexDisplacer {
     public void DisplaceHexes() {
         if (HexesList != null && HexesList.Count > 0) {
             var hexRendererComponent = HexesList[0].GetComponent<HexRenderer>();
-            float hexVectorScalar = hexRendererComponent.radius * Mathf.Sqrt(3 / 2f);
+            float hexVectorScalar = hexRendererComponent.radius * Mathf.Sqrt(3 / 2f) + 0.2F;
 
             foreach (var hex in HexesList) {
                 int s = (hex.q + hex.r) * -1;
