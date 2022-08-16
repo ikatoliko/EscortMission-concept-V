@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -95,12 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1770e7219cf612e489153a0f00261d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  height: 0
-  radious: 7
-  isFlatTopped: 0
+  material: {fileID: 2100000, guid: 3fac0db21175f714ab3fd52956f3a760, type: 2}
+  radius: 0.5
   reversedMesh: 0
-  ovo: {x: 0, y: 0, z: 0}
 --- !u!114 &7325676339595152430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,5 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b01f925c2c32d4da8dd9b209dbe8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  q: 0
-  r: 0
+  deploymentField: 0
+  tileTypeSO: {fileID: 11400000, guid: cb48bbe4f2bc2c24bae3f2eab8b8365a, type: 2}
+  HexOccupant: {fileID: 0}
+  tileStateSO: {fileID: 11400000, guid: 6cd7d6d7cb5166b4081781b96dcaeadd, type: 2}
+  hooverTileStateSO: {fileID: 11400000, guid: 56fc6c48e66fd4749851b22010d0089a, type: 2}
