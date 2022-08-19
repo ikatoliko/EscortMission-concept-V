@@ -5,8 +5,7 @@ using UnityEngine;
 public class BattleMapLoader : AnyMapLoader<BattleMap> {
     [SerializeField] private GameObject _hexPrefab;
 
-
-    void OnEnable() {
+    public override void GenerateMap() {
         var battleMap = new GameObject("BattleMap").AddComponent<BattleMap>();
         var spawnMethod = new RectangleHexSpawnMethod();
         spawnMethod.SetPrefab(_hexPrefab, battleMap.transform);

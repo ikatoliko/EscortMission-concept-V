@@ -9,4 +9,6 @@ public abstract class AnyMapLoader<T> : MonoBehaviour where T : AnyMap {
     protected void InvokeMapCreatedEvent(AnyMapLoader<T> invoker, T result) {
         mapCreatedEvent?.Invoke(invoker, result);
     }
+
+    public abstract void GenerateMap();
 }
