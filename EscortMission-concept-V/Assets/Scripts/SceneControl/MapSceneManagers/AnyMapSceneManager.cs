@@ -13,9 +13,11 @@ public abstract class AnyMapSceneManager<T> : MonoBehaviour where T : AnyMap {
             mapLoader.GenerateMap();
         } else Debug.LogError($"There is no MapLoader of type {mapLoader.GetType()}");
     }
-    protected void HandleMapCreatedEvent(AnyMapLoader<T> eventSender, T map) {
+    private void HandleMapCreatedEvent(AnyMapLoader<T> eventSender, T map) {
         eventSender.mapCreatedEvent -= HandleMapCreatedEvent;
         _map = map;
         Destroy(eventSender.gameObject);
     }
+
+
 }
