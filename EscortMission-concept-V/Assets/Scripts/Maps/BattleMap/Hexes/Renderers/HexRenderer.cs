@@ -49,7 +49,6 @@ public class HexRenderer : MonoBehaviour {
     #endregion
     
     private void DrawMesh() {
-        transform.rotation = Quaternion.LookRotation(Vector3.one);
         DrawFaces();
         CombineFaces();
     }

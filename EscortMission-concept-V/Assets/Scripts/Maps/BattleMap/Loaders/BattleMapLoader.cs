@@ -7,6 +7,7 @@ public class BattleMapLoader : AnyMapLoader<BattleMap> {
 
     public override void GenerateMap() {
         var battleMap = new GameObject("BattleMap").AddComponent<BattleMap>();
+        battleMap.transform.rotation = Quaternion.LookRotation(Vector3.one);
         var spawnMethod = new RectangleHexSpawnMethod();
         spawnMethod.SetPrefab(_hexPrefab, battleMap.transform);
         var hexesList = spawnMethod.SpawnHexes(2, 6, 2);
