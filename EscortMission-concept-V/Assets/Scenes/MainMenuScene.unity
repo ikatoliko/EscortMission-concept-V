@@ -269,7 +269,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819391458}
-  - component: {fileID: 819391457}
+  - component: {fileID: 819391459}
+  - component: {fileID: 819391460}
   m_Layer: 0
   m_Name: SceneMasterObject
   m_TagString: Untagged
@@ -277,18 +278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819391457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819391456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788bfbe817ef7a94f9a27f14f5577bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &819391458
 Transform:
   m_ObjectHideFlags: 0
@@ -302,8 +291,33 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819391459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819391456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cc0b07e772221498330e0957447cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &819391460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819391456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788bfbe817ef7a94f9a27f14f5577bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneTransitionRequest: {fileID: 11400000, guid: 1098d57c4f50f9645a8352f210f304f9, type: 2}
 --- !u!1 &888609620
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +384,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1195552205
 GameObject:
@@ -456,7 +470,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 819391457}
+      - m_Target: {fileID: 819391460}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: TransitionToBattleScene
         m_Mode: 1
@@ -736,7 +750,7 @@ RectTransform:
   - {fileID: 1264788427}
   - {fileID: 1195552206}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

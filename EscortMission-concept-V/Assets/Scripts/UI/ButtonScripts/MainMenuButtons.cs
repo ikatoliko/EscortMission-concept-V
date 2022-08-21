@@ -1,8 +1,8 @@
 using System;
+using UnityEngine;
 
-public sealed class MainMenuButtons : SceneTransitionRequestor {
-    public override event Action<SceneTransitioner.ScenesInBuild> transToScene;
+public sealed class MainMenuButtons : AnySceneTransitionRequestor {
     public void TransitionToBattleScene() {
-        transToScene?.Invoke(SceneTransitioner.ScenesInBuild.BattleScene);
+        RequestSceneTransition(SceneTransitioner.ScenesInBuild.BattleScene);
     }
 }

@@ -5,10 +5,16 @@ using UnityEngine;
 public class BattleMap : AnyMap {
     private HexCollection _hexCollection;
 
-    void OnEnable() {
-        _hexCollection = new();
+    public override Transform InitialCameraTransform() {
+        var trans = transform;
+        trans.position = _hexCollection.GetHex(0, 0).transform.position;
+
+        return trans;
     }
 
+    public void RegisterNewHexList(List<Hexa> hexes) {
+        _hexCollection = new(hexes);
+    }
 
 }
 
@@ -25,5 +31,9 @@ public class HexCollection {
 
     public bool AddHexToCollection(Hexa hex) {
         return _hexColl.TryAdd(hex.coords, hex);
+    }
+
+    public Hexa GetHex(int q, int r) {
+        return _hexColl.GetValueOrDefault(HexCoords.Coords(q, r));
     }
 }

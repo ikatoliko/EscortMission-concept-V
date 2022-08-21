@@ -42,14 +42,3 @@ public class Hexa : MonoBehaviour {
         onHexSelect?.Invoke(this);
     }
 }
-
-public struct HexCoords {
-    public int q, r;
-    public HexCoords(int q, int r) {
-        this.q = q;
-        this.r = r;
-    }
-
-    public int GetS() => -q -r;
-
-}

@@ -4,11 +4,9 @@ using UnityEngine;
 using System;
 
 public abstract class AnyMapLoader<T> : MonoBehaviour where T : AnyMap {
-    public event Action<AnyMapLoader<T>, T> mapCreatedEvent;
+    [SerializeField] protected AnyGameEventWithParameterSO<T> _mapLoadedEvent;
 
-    protected void InvokeMapCreatedEvent(AnyMapLoader<T> invoker, T result) {
-        mapCreatedEvent?.Invoke(invoker, result);
+    public void InvokeMapCreatedEvent(T result) {
+        _mapLoadedEvent?.Raise(result);
     }
-
-    public abstract void GenerateMap();
 }

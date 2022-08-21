@@ -1,9 +1,10 @@
 using System;
+using UnityEngine;
 
-public sealed class BattleMapButtons : SceneTransitionRequestor {
-    public override event Action<SceneTransitioner.ScenesInBuild> transToScene;
-
+public sealed class BattleMapButtons : AnySceneTransitionRequestor {
     public void TransitionToMainMenu() {
-        transToScene?.Invoke(SceneTransitioner.ScenesInBuild.MainMenuScene);
+        RequestSceneTransition(SceneTransitioner.ScenesInBuild.MainMenuScene);
     }
 }
+
+

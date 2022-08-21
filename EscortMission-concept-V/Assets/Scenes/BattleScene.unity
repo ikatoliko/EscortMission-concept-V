@@ -254,7 +254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4aa6035a087d14f980e494a1b60925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mapLoadedEvent: {fileID: 11400000, guid: d0bd3ce483e589c4eaaf1678cceef9d9, type: 2}
   _hexPrefab: {fileID: 4529006994938141823, guid: 7e6f9e8b6cf3f934cb868280f6ec63d4, type: 3}
+  _receivedMapParameterPackage:
+    _gameEvent: {fileID: 11400000, guid: da08cae1810472345af151974cd7e775, type: 2}
 --- !u!4 &534194629
 Transform:
   m_ObjectHideFlags: 0
@@ -281,6 +284,7 @@ GameObject:
   - component: {fileID: 819391458}
   - component: {fileID: 819391461}
   - component: {fileID: 819391457}
+  - component: {fileID: 819391462}
   m_Layer: 0
   m_Name: SceneMasterObject
   m_TagString: Untagged
@@ -300,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393ed0be0cea2904ead47371562b9c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransitionRequest: {fileID: 11400000, guid: 1098d57c4f50f9645a8352f210f304f9, type: 2}
 --- !u!4 &819391458
 Transform:
   m_ObjectHideFlags: 0
@@ -327,6 +332,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9172a01c444b8e04c917026077b936f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _requestCameraMove: {fileID: 11400000, guid: 0353b97f6bb56434b91107c119b807c9, type: 2}
+  _provideBattleMapLoaderWithData: {fileID: 11400000, guid: da08cae1810472345af151974cd7e775, type: 2}
+--- !u!114 &819391462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819391456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3594f521b5b3ecb4586230c8dcd8506f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: d0bd3ce483e589c4eaaf1678cceef9d9, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 819391461}
+        m_TargetAssemblyTypeName: AnyMapSceneManager`1[[BattleMap, Assembly-CSharp
+        m_MethodName: HandleMapCreatedEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1062637584
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class BattleMapLoader : AnyMapLoader<BattleMap> {
     [SerializeField] private GameObject _hexPrefab;
+    [SerializeField] private CodedGameEventListener<BattleMapParameterPackage> _receivedMapParameterPackage;
 
-    public override void GenerateMap() {
-        var battleMap = new GameObject("BattleMap").AddComponent<BattleMap>();
-        battleMap.transform.rotation = Quaternion.LookRotation(Vector3.one);
-        var spawnMethod = new RectangleHexSpawnMethod();
-        spawnMethod.SetPrefab(_hexPrefab, battleMap.transform);
-        var hexesList = spawnMethod.SpawnHexes(2, 6, 2);
+    private BattleMap GenerateMap(BattleMapParameterPackage bmpp) {
+        BattleMap battleMap = null;
+        if (bmpp != null) {
+            battleMap = new GameObject("BattleMap").AddComponent<BattleMap>();
+            battleMap.transform.rotation = Quaternion.LookRotation(Vector3.one);
 
-        var hexDisplacer = new DirectHexDisplacer();
-        hexDisplacer.RegisterHexesList(hexesList);
-        hexDisplacer.DisplaceHexes();
+            var spawnMethod = new RectangleHexSpawnMethod();
+            spawnMethod.SetPrefab(_hexPrefab, battleMap.transform);
+            var hexesList = spawnMethod.SpawnHexes(bmpp.mapWidth, bmpp.mapHeight, 2);
 
-        InvokeMapCreatedEvent(this, battleMap);
+            var hexDisplacer = new DirectHexDisplacer();
+            hexDisplacer.RegisterHexesList(hexesList);
+            hexDisplacer.DisplaceHexes();
+
+            battleMap.RegisterNewHexList(hexesList);
+        }
+        return battleMap;
+    }
+
+    void OnEnable() {
+        _receivedMapParameterPackage?.Enable(SetMapParameterPackage);
+    }
+
+    void OnDisable() {
+        _receivedMapParameterPackage?.Disable(SetMapParameterPackage);
+    }
+
+    private void SetMapParameterPackage(BattleMapParameterPackage bmpp) {
+        InvokeMapCreatedEvent(GenerateMap(bmpp));
+        Destroy(gameObject);
+    }
+}
+
+public class BattleMapParameterPackage {
+    public int mapWidth;
+    public int mapHeight;
+
+    public BattleMapParameterPackage(int mapWidth, int mapHeight) {
+        this.mapWidth = mapWidth;
+        this.mapHeight = mapHeight;
     }
 }
