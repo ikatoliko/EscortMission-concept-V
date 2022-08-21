@@ -35,13 +35,11 @@ using System;
     }
 
     public void Enable(Action<T> response) {
-        Debug.Log("Enable");
         _gameEvent?.RegisterListener(this);
         _response = response;
     }
 
     public void Disable(Action<T> response) {
-        Debug.Log("Disable");
         _gameEvent?.RegisterListener(this);
         _response = null;
     }
