@@ -35,9 +35,9 @@ public class MyCameraController : MonoBehaviour {
         _keyIsPressed = false;
     }
 
-    void FixedUpdate() {
+    void Update() {
         if(_keyIsPressed) {
-            transform.Translate(_moveAction.ReadValue<Vector3>() * _cameraMoveSpeed);
+            transform.Translate(_moveAction.ReadValue<Vector3>() * _cameraMoveSpeed * Time.deltaTime);
         }
     }
 
